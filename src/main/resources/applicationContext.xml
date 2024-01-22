@@ -9,7 +9,6 @@
     <context:property-placeholder location="classpath:application.properties"/>
     <bean id='myPet'
           class='com.polinasuvorova.spring_course.rootclass.Dog'>
-
     </bean>
     <bean id='myPerson'
           class="com.polinasuvorova.spring_course.rootclass.Person">
