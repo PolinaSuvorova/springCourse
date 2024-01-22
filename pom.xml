@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.polinasuvorova</groupId>
-    <artifactId>spring_course</artifactId>
+    <artifactId>springCourse</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>spring_course</name>
