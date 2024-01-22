@@ -9,16 +9,16 @@ public class Person {
     private String surname;
     private Integer age;
 
-    /*    public Person() {
-            System.out.println("Create person");
-            //this.pet = pet;
-        }*/
+    public Person() {
+        System.out.println("Create person");
+        //this.pet = pet;
+    }
 
-    @Autowired
+/*    @Autowired
     public Person(Pet pet) {
         System.out.println("Create person bean");
         this.pet = pet;
-    }
+    }*/
 
     public void setSurname(String surname) {
         System.out.println("Set surname");
@@ -30,9 +30,10 @@ public class Person {
         this.age = age;
     }
 
+    @Autowired
     public void setPet(Pet pet) {
         System.out.println("Set class pet");
-        //   this.pet = pet;
+        this.pet = pet;
     }
 
     public void callYourPet() {
