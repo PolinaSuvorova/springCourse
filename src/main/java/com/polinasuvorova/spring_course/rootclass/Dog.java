@@ -19,4 +19,12 @@ public class Dog implements Pet {
     public void say() {
         System.out.println("Bow-wow");
     }
+
+    private void init(){
+        System.out.println("Init dog method");
+    }
+
+    private void destroy(){
+        System.out.println("Destroy dog method");
+    }
 }

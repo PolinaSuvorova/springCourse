@@ -9,6 +9,8 @@
     <context:property-placeholder location="classpath:application.properties"/>
     <bean id='myPet'
           class='com.polinasuvorova.spring_course.rootclass.Dog'
-          scope="prototype">
+          init-method="init"
+          destroy-method="destroy"
+    >
     </bean>
 </beans>
