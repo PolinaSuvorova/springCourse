@@ -13,6 +13,6 @@
     </bean>
     <bean id='myPerson'
           class="com.polinasuvorova.spring_course.rootclass.Person">
-        <constructor-arg ref="myPet"/>
+        <property name="pet" ref="myPet"/>
     </bean>
 </beans>
