@@ -1,12 +1,23 @@
 package com.polinasuvorova.spring_course.rootclass;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("personBean")
 public class Person {
     private Pet pet;
     private String surname;
     private Integer age;
-    public Person() {
-        System.out.println("Create person");
-        //this.pet = pet;
+
+    /*    public Person() {
+            System.out.println("Create person");
+            //this.pet = pet;
+        }*/
+
+    @Autowired
+    public Person(Pet pet) {
+        System.out.println("Create person bean");
+        this.pet = pet;
     }
 
     public void setSurname(String surname) {
@@ -19,12 +30,12 @@ public class Person {
         this.age = age;
     }
 
-    public void setPet(Pet pet ) {
+    public void setPet(Pet pet) {
         System.out.println("Set class pet");
-     //   this.pet = pet;
+        //   this.pet = pet;
     }
 
-    public void callYourPet(){
+    public void callYourPet() {
         System.out.println("Helloy, my lovely pet");
         pet.say();
     }
