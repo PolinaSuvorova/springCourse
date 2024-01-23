@@ -1,8 +1,12 @@
 package com.polinasuvorova.spring_course.rootclass;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 @Component
+@Scope("prototype")
 public class Dog implements Pet {
     private String name;
 
@@ -23,6 +27,7 @@ public class Dog implements Pet {
         System.out.println("Bow-wow");
     }
 
+    @PostConstruct
     private void init(){
         System.out.println("Init dog method");
     }
