@@ -7,7 +7,10 @@ public class TestMyConfigClass {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext("com.polinasuvorova.spring_course.rootclass");
 
-        Person person = context.getBean("personBean", Person.class);
+        Cat cat = context.getBean("catBean", Cat.class);
+        cat.say();
+
+        Person person  = context.getBean("personBean", Person.class);
         person.callYourPet();
         context.close();
     }

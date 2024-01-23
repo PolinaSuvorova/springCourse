@@ -1,12 +1,9 @@
 package com.polinasuvorova.spring_course.rootclass;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
 import javax.annotation.PostConstruct;
 
-@Component
-@Scope("prototype")
+//@Component
+//@Scope("prototype")
 public class Dog implements Pet {
     private String name;
 

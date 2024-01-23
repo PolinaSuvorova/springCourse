@@ -1,10 +1,6 @@
 package com.polinasuvorova.spring_course.rootclass;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-
-@Component("personBean")
+//@Component("personBean")
 public class Person {
 
     /*   @Autowired
@@ -21,12 +17,16 @@ public class Person {
         //this.pet = pet;
     }
 
-    @Autowired
+/*    @Autowired
     public Person(@Qualifier("dog") Pet pet) {
         System.out.println("Create person bean");
         this.pet = pet;
-    }
+    }*/
 
+    public Person( Pet pet) {
+        System.out.println("Create person bean");
+        this.pet = pet;
+    }
     public String getSurname() {
         return surname;
     }
