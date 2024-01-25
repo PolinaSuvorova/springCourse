@@ -7,8 +7,14 @@ public class TestAOP {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(MyConfigAOP.class);
 
-        Library library = context.getBean("libraryBean", Library.class);
+        Library library = context.getBean("library", Library.class);
         library.getBook();
+        library.getMagazin();
+        library.retunBook();
+
+        SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
+        schoolLibrary.getBook();
+
 
         context.close();
     }
