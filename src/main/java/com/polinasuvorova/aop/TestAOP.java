@@ -8,12 +8,14 @@ public class TestAOP {
                 new AnnotationConfigApplicationContext(MyConfigAOP.class);
 
         Library library = context.getBean("library", Library.class);
-        library.getBook();
+        Book book = context.getBean("book",Book.class);
+
+        library.getBook(book);
         library.getMagazin();
         library.retunBook();
 
         SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
-        schoolLibrary.getBook();
+        schoolLibrary.getBook( 2 );
 
 
         context.close();

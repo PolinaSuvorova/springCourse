@@ -5,9 +5,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Library extends AbstarctLibrary {
 
-    @Override
-    public void getBook(){
-    System.out.println("Берём книгу");
+  //  @Override
+    public void getBook(Book book){
+    System.out.println("Берём книгу " + book.getName() );
     }
 
     public String  retunBook(){
