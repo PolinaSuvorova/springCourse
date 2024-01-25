@@ -10,13 +10,24 @@ public class Library extends AbstarctLibrary {
     System.out.println("Берём книгу "  );
     }
 
-    public String  retunBook(){
+    public void returnBook(){
         System.out.println("Возвращаем книгу");
-        return "Возвращаем книгу";
     }
 
     public void getMagazin(){
         System.out.println("Берём журнал");
+    }
+
+    public void returnMagazin(){
+        System.out.println("Возвращаем журнал");
+    }
+
+    public void addMagazin(){
+        System.out.println("Добавить журнал");
+    }
+
+    public void addBook(){
+        System.out.println("Добавить книгу");
     }
 
 }

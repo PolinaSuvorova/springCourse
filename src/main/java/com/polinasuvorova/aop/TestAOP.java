@@ -12,7 +12,9 @@ public class TestAOP {
 
         library.getBook( );
         library.getMagazin();
-
+        library.returnBook( );
+        library.addBook( );
+        library.returnMagazin();
         context.close();
     }
 }
