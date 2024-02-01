@@ -18,7 +18,7 @@ public class NewLoggingAspect {
             targetResult = pjp.proceed();
         }catch (Exception e){
             System.out.println(" Exception: " + e );
-            targetResult = "Default name after error";
+            throw e;
         }
 
         long end = System.currentTimeMillis();
