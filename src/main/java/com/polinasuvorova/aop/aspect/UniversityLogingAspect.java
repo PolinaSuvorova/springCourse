@@ -1,10 +1,7 @@
 package com.polinasuvorova.aop.aspect;
 
 import com.polinasuvorova.aop.Student;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -44,4 +41,12 @@ public class UniversityLogingAspect {
                 " в методе  getStudents");
         System.out.println("-----------------------------------------------");
     }
+
+    @After("execution(* getStudents())" )
+    public void afterGetStudentsLoggingAdvice(){
+        System.out.println("afterGetStudentsLoggingAdvice: логируем запуск after" +
+                " в методе  getStudents");
+        System.out.println("-----------------------------------------------");
+    }
+
 }
