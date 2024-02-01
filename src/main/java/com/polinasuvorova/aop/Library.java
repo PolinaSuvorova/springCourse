@@ -11,9 +11,9 @@ public class Library extends AbstarctLibrary {
         System.out.println("-----------------------------------");
     }
 
-    public void returnBook(){
+    public String returnBook(){
         System.out.println("Возвращаем книгу");
-        System.out.println("-----------------------------------");
+        return "Война и мир";
     }
 
     public void getMagazin(){
@@ -21,9 +21,9 @@ public class Library extends AbstarctLibrary {
         System.out.println("-----------------------------------");
     }
 
-    public void returnMagazin(){
+    public String returnMagazin(){
         System.out.println("Возвращаем журнал");
-        System.out.println("-----------------------------------");
+        return "Война и мир";
     }
 
     public void addMagazin(){
