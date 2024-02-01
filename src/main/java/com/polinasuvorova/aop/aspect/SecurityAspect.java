@@ -9,9 +9,10 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Order(2)
 public class SecurityAspect {
-    @Before("com.polinasuvorova.aop.aspect.MyPointcuts.allGetMethods()")
-    public void beforeGetSecurityAdvice() {
-        System.out.println( "--SecurityAspect.beforeGetSecurityAdvice" );
+    @Before("com.polinasuvorova.aop.aspect.MyPointcuts.allAddMethods()")
+    public void beforeAddSecurityAdvice() {
+        System.out.println( "--SecurityAspect.beforeAddSecurityAdvice" );
+        System.out.println("-----------------------------------");
 
     }
 }
