@@ -13,6 +13,7 @@ public class Library extends AbstarctLibrary {
 
     public String returnBook(){
         System.out.println("Возвращаем книгу");
+        int a = 10 / 0;
         return "Война и мир";
     }
 

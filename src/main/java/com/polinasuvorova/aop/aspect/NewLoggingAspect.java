@@ -10,10 +10,17 @@ import org.springframework.stereotype.Component;
 public class NewLoggingAspect {
     @Around("execution(public String returnBook())")
     public Object aroundReturnBookLoggingAdvice(ProceedingJoinPoint pjp) throws Throwable {
+        Object targetResult = null;
         System.out.println("1 aroundReturnBookLoggingAdvice: В библиотеку возвращают книгу");
 
         long begin = System.currentTimeMillis();
-        Object targetResult = pjp.proceed();
+        try {
+            targetResult = pjp.proceed();
+        }catch (Exception e){
+            System.out.println(" Exception: " + e );
+            targetResult = "Default name after error";
+        }
+
         long end = System.currentTimeMillis();
 
         System.out.println(" total milesec = " + (end - begin) );
