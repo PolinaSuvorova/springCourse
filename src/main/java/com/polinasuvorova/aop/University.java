@@ -19,6 +19,8 @@ public class University {
     }
 
     public List<Student> getStudents(){
+        System.out.println("->Begin of method getStudents:");
+        System.out.println(students.get(3)); // exception
         System.out.println("Information from method getStudents:");
         System.out.println(students);
         return students;
