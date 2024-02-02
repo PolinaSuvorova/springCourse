@@ -18,14 +18,11 @@ public class EmployeeTest {
             // открытие транзакции и изменение данных
             session.beginTransaction();
             session.persist(emp);
-            session.getTransaction().commit();
 
             int myId = emp.getId();
-
-            session = factory.getCurrentSession();
-            session.beginTransaction();
             Employee empGet = session.get(Employee.class, myId);
             session.getTransaction().commit();
+
             System.out.println(empGet);
         } finally {
             factory.close();
