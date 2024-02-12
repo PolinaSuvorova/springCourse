@@ -15,8 +15,6 @@ public class EmployeeTest5 {
             Session session = factory.getCurrentSession();
                        // открытие транзакции и изменение данных
             session.beginTransaction();
-            session = factory.getCurrentSession();
-            session.beginTransaction();
             session.createQuery( "delete Employee " +
                     "where  name='Elena'").executeUpdate();
             session.getTransaction().commit();
