@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
     @Column(name = "name")
@@ -18,6 +19,9 @@ public class Employee {
     @Column(name = "salary")
     private int salary;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "details_id")
+    private Detail empDetail;
 
     public Employee() {
     }
@@ -67,6 +71,14 @@ public class Employee {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Detail getEmpDetail() {
+        return empDetail;
+    }
+
+    public void setEmpDetail(Detail empDetail) {
+        this.empDetail = empDetail;
     }
 
     @Override
