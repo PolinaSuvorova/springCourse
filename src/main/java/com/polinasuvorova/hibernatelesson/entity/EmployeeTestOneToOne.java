@@ -15,21 +15,21 @@ public class EmployeeTestOneToOne {
         Session session = factory.getCurrentSession();
         try {
 
-            Employee employee = new Employee("Polina", "TTT", "HR", 300000);
-            Detail empDetail = new Detail("Moscow", "8888888", "polina@gmail.com");
-            employee.setEmpDetail(empDetail);
-            // открытие транзакции и изменение данных
-            session.beginTransaction();
-            session.persist(employee);
-            session.getTransaction().commit();
-            int myId = employee.getId();
-
-            session = factory.getCurrentSession();
-            session.beginTransaction();
-            Employee empGet = session.get(Employee.class, myId);
-            System.out.println(empGet.getEmpDetail());
-            session.remove(empGet);
-            session.getTransaction().commit();
+//            Employee employee = new Employee("Polina", "TTT", "HR", 300000);
+//            Detail empDetail = new Detail("Moscow", "8888888", "polina@gmail.com");
+//            employee.setEmpDetail(empDetail);
+//            // открытие транзакции и изменение данных
+//            session.beginTransaction();
+//            session.persist(employee);
+//            session.getTransaction().commit();
+//            int myId = employee.getId();
+//
+//            session = factory.getCurrentSession();
+//            session.beginTransaction();
+//            Employee empGet = session.get(Employee.class, myId);
+//            System.out.println(empGet.getEmpDetail());
+//            session.remove(pGet);
+//            session.getTransaction().commit();
 
 
         } finally {

@@ -14,8 +14,6 @@ public class Employee {
     private String name;
     @Column(name = "surname")
     private String surname;
-    @Column(name = "department")
-    private String department;
     @Column(name = "salary")
     private int salary;
 
@@ -23,10 +21,13 @@ public class Employee {
     @JoinColumn(name = "details_id")
     private Detail empDetail;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "department_id")
+    private Department department;
     public Employee() {
     }
 
-    public Employee(String name, String surname, String department, int salary) {
+    public Employee(String name, String surname, Department department, int salary) {
         this.name = name;
         this.surname = surname;
         this.department = department;
@@ -47,14 +48,6 @@ public class Employee {
 
     public void setSurname(String surname) {
         this.surname = surname;
-    }
-
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
     }
 
     public int getSalary() {
@@ -79,6 +72,14 @@ public class Employee {
 
     public void setEmpDetail(Detail empDetail) {
         this.empDetail = empDetail;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     @Override

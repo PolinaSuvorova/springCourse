@@ -15,23 +15,17 @@ public class EmployeeTestOneToOne2 {
         Session session = factory.getCurrentSession();
         try {
 
-            Employee employee = new Employee("Pavel", "Smith", "HR", 100000);
-            Detail empDetail = new Detail("London", "8888866", "misha@gmail.com");
-
-            employee.setEmpDetail(empDetail);
-            empDetail.setEmployee(employee);
-
             // открытие транзакции и изменение данных
-            session.beginTransaction();
-            session.persist(empDetail);
-            session.getTransaction().commit();
 
-            int myId = employee.getId();
+            int myId = 10;
+
             session = factory.getCurrentSession();
             session.beginTransaction();
-            Employee empGet = session.get(Employee.class, myId);
-            System.out.println(empGet.getEmpDetail());
-            //session.remove(empGet);
+            Detail detGet = session.get(Detail.class, myId);
+            System.out.println(detGet);
+            detGet.getEmployee( ).setEmpDetail(null);//DELETE relation with detail in employee
+            //Delete only details
+            session.remove(detGet);
             session.getTransaction().commit();
 
 

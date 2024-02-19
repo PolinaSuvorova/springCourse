@@ -16,7 +16,7 @@ public class Detail {
     @Column(name = "email")
     private String email;
 
-    @OneToOne(mappedBy = "empDetail", cascade = CascadeType.ALL) // Bi-directional relation
+    @OneToOne(mappedBy = "empDetail", cascade = {CascadeType.PERSIST,CascadeType.REFRESH}) // Bi-directional relation
     private Employee employee;
 
     public Detail() {
@@ -66,5 +66,16 @@ public class Detail {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    @Override
+    public String toString() {
+        return "Detail{" +
+                "id=" + id +
+                ", city='" + city + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", employee=" + employee +
+                '}';
     }
 }
